@@ -131,3 +131,4 @@ dmypy.json
 */model.h5
 */model.json
 */tokenizer.pkl
+*/max_text_length.pkl
