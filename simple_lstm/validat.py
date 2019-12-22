@@ -4,14 +4,10 @@ import numpy as np
 import pandas as pd
 
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-from tensorflow.keras.models import Sequential,model_from_json
-from tensorflow.keras.layers import Dense, Embedding, LSTM, SpatialDropout1D
-from sklearn.model_selection import train_test_split
+from tensorflow.keras.models import model_from_json
 
-from keras.utils.np_utils import to_categorical
 import re, pickle
 import tensorflow as tf
-from tensorflow.keras import backend
 
 graph = tf.Graph()
 
@@ -27,7 +23,6 @@ for idx,row in data.iterrows():
  
 
 # data prepration/feature extraction/feature building
-max_fatures = 2000
 tokenizer = pickle.load(open("tokenizer.pkl","rb"))
 
 X = tokenizer.texts_to_sequences(data['text'].values)
@@ -39,7 +34,8 @@ X_validate = X[-validation_size:]
 Y_validate = Y[-validation_size:]
 X_test = X[:-validation_size]
 Y_test = Y[:-validation_size]
-
+print(type(X_validate),X_validate.shape)
+# error
 # loading model and validating
 batch_size = 32
 pos_cnt, neg_cnt, nut_cnt, pos_correct, neg_correct, nut_correct = 0, 0, 0, 0, 0, 0

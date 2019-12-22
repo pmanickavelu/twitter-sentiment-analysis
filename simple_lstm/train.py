@@ -1,6 +1,5 @@
 # built on python3.7
 
-import numpy as np
 import pandas as pd
 
 from tensorflow.keras.preprocessing.text import Tokenizer
