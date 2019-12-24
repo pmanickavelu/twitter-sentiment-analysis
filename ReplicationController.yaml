@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: twitter-sentiment-analysis
-        image: docker.pkg.github.com/pmanickavelu/twitter-sentiment-analysis/simple_lstm:1
+        image: docker.pkg.github.com/pmanickavelu/twitter-sentiment-analysis/simple_lstm
         imagePullPolicy: Always
         env:
         - name: USER
