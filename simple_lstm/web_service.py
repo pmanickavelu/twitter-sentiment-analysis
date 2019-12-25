@@ -11,7 +11,7 @@ sess = tf.compat.v1.Session(graph=graph)
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.models import model_from_json
 
-import re, pickle,os
+import re, pickle, os
 
 with sess.as_default():
     with graph.as_default():
@@ -65,4 +65,6 @@ def build_results(predicts,o_texts,texts):
                 })
     return results
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000,debug=True)
+    app.run(host='0.0.0.0', port=5000,debug=os.environ.get("FLAST_DEBUG_MODE"True))
+
+

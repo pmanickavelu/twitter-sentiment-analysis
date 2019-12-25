@@ -22,7 +22,7 @@ spec:
         image: docker.pkg.github.com/pmanickavelu/twitter-sentiment-analysis/simple_lstm
         imagePullPolicy: Always
         env:
-        - name: USER
+        - name: FLAST_DEBUG_MODE
           value: False
         resources:
           limits:
